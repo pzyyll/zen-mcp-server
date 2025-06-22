@@ -11,8 +11,7 @@
       "Bash(cat:*)",
       "Bash(grep:*)",
       "Bash(source:*)",
-      "Bash(rm:*)",
-      "mcp__zen__analyze"
+      "Bash(rm:*)"
     ],
     "deny": []
   }
