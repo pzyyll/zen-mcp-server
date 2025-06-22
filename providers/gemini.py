@@ -80,7 +80,10 @@ class GeminiModelProvider(ModelProvider):
     def client(self):
         """Lazy initialization of Gemini client."""
         if self._client is None:
-            self._client = genai.Client(api_key=self.api_key)
+            self._client = genai.Client(
+                api_key=self.api_key,
+                http_options={"base_url": os.getenv("GEMINI_BASE_URL")} if os.getenv("GEMINI_BASE_URL", None) else None,
+            )
         return self._client
 
     def get_capabilities(self, model_name: str) -> ModelCapabilities:
